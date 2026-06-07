@@ -3,6 +3,7 @@ import pathlib
 import shutil
 import sys
 import logging
+from tqdm import tqdm
 
 FILE_TYPE_MAP = {
     "Images": ['.jpeg', '.jpg', '.gif', '.png', '.svg'],
@@ -13,37 +14,45 @@ FILE_TYPE_MAP = {
     "Other": []
 }
 
-def organise_dir(source_path: pathlib.Path):
-    for item in source_path.iterdir():
-        if item.is_file():
-            file_ext = item.suffix.lower()
-            print(f"found file: {item.name} extension:{file_ext}")
-            destination_folder_name = 'Other'
-            for category, extensions in FILE_TYPE_MAP.items():
-                if file_ext in extensions:
-                    destination_folder_name = category
-                    break
+def organise_dir(source_path: pathlib.Path,dry_run: bool=False):
+    if dry_run:
+        logging.info("--DRY RUN ENABLED: no files will be moved")
+    else:
+        logging.warning("---LIVE RUN MODE ENABLED: file system changes will be made")
+    files_to_process = [item for item in source_path.iterdir() if item.is_file()]
+    for item in tqdm(files_to_process, desc='Organising files'):
+                file_ext = item.suffix
+                destination_folder_name = 'Other'
+                for category, extensions in FILE_TYPE_MAP.items():
+                    if file_ext in extensions:
+                        destination_folder_name = category
+                        break
 
-            destination_dir = source_path / destination_folder_name
-            destination_dir.mkdir(parents=True, exist_ok=True)
-            destination_file_path = destination_dir / item.name
-            counter=1
-            while destination_file_path.exists:
-                new_filename = f"{item.stem}({counter}){item.suffix}"
-                destination_file_path= destination_dir/new_filename
-                coutner+=1
+                destination_dir = source_path / destination_folder_name
+                if dry_run:
+                    destination_file_path= destination_dir/item.name
+                    logging.info(f"[DRY RUN] would move '{item.name}' -> '{destination_file_path}'")
+                else:
+                    destination_dir.mkdir(parents=True, exist_ok=True)
+                    destination_file_path = destination_dir / item.name
+                    counter=1
+                    while destination_file_path.exists():
+                        new_filename = f"{item.stem}({counter}){item.suffix}"
+                        destination_file_path= destination_dir/new_filename
+                        counter+=1
             
-            try:
-                shutil.move(item, destination_file_path)
-                logging.info(f"file name : '{item.name}' -> destination : '{destination_dir}'")
-            except(FileExistsError, PermissionError) as e:
-                logging.error(f"could not move'{item.name}',error:{e}")    
-            except Exception as e:
-                logging.error(f"an unknown error has occured while processing'{item.name}' , error:{e}")
+                    try:
+                        shutil.move(item, destination_file_path)
+                        logging.info(f"file name : '{item.name}' -> destination : '{destination_dir}'")
+                    except(FileExistsError, PermissionError) as e:
+                        logging.error(f"could not move'{item.name}',error:{e}")    
+                    except Exception as e:
+                        logging.error(f"an unknown error has occured while processing'{item.name}' , error:{e}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="organise files in a directry by their types...")
     parser.add_argument('source_directory', help='The path to the directory you want to organise.')
+    parser.add_argument('--dry-run', action='store_true',help='stimulate the organisation without storing files.')
     args = parser.parse_args()
 
     logging.basicConfig(
@@ -60,4 +69,4 @@ if __name__ == "__main__":
         print(f"Error :The Path:{source_path} does not exists or is not a directory.")
         sys.exit(1)
     logging.info(f"starting to organise directry: {source_path}")
-    organise_dir(source_path)
+    organise_dir(source_path,dry_run=args.dry_run)

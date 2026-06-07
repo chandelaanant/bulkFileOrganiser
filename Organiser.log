@@ -1,2 +1,33 @@
 2026-06-06 23:24:23,266- INFO- starting to organise directry: C:\Users\Ashok chandela\OneDrive\Desktop\test
 2026-06-06 23:26:41,357- INFO- starting to organise directry: C:\Users\Ashok chandela\OneDrive\Desktop\test
+2026-06-07 16:25:20,419- INFO- starting to organise directry: C:\Users\Ashok chandela\OneDrive\Desktop\test
+2026-06-07 16:25:20,423- INFO- found file: film.mov extension:.mov
+2026-06-07 16:26:21,831- INFO- starting to organise directry: C:\Users\Ashok chandela\OneDrive\Desktop\test
+2026-06-07 16:26:21,834- INFO- found file: film.mov extension:.mov
+2026-06-07 16:35:50,348- INFO- starting to organise directry: C:\Users\Ashok chandela\OneDrive\Desktop\test
+2026-06-07 16:35:50,349- INFO- --DRY RUN ENABLED: no files will be moved
+2026-06-07 16:35:50,581- INFO- [DRY RUN] would move 'film.mov' -> 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Video\film.mov'
+2026-06-07 16:35:50,582- INFO- [DRY RUN] would move 'gift.gif' -> 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Images\gift.gif'
+2026-06-07 16:35:50,582- INFO- [DRY RUN] would move 'image2.jpg' -> 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Images\image2.jpg'
+2026-06-07 16:35:50,583- INFO- [DRY RUN] would move 'music.mp3' -> 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Audio\music.mp3'
+2026-06-07 16:35:50,583- INFO- [DRY RUN] would move 'powerpoint.pptx' -> 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Documents\powerpoint.pptx'
+2026-06-07 16:35:50,583- INFO- [DRY RUN] would move 'report.pdf' -> 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Documents\report.pdf'
+2026-06-07 16:35:50,583- INFO- [DRY RUN] would move 'sound.wav' -> 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Audio\sound.wav'
+2026-06-07 16:36:15,957- INFO- starting to organise directry: C:\Users\Ashok chandela\OneDrive\Desktop\test
+2026-06-07 16:36:15,994- INFO- file name : 'film.mov' -> destination : 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Video'
+2026-06-07 16:36:15,998- INFO- file name : 'gift.gif' -> destination : 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Images'
+2026-06-07 16:36:16,000- INFO- file name : 'image2.jpg' -> destination : 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Images'
+2026-06-07 16:36:16,004- INFO- file name : 'music.mp3' -> destination : 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Audio'
+2026-06-07 16:36:16,007- INFO- file name : 'powerpoint.pptx' -> destination : 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Documents'
+2026-06-07 16:36:16,010- INFO- file name : 'report.pdf' -> destination : 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Documents'
+2026-06-07 16:36:16,013- INFO- file name : 'sound.wav' -> destination : 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Audio'
+2026-06-07 21:38:09,622- INFO- starting to organise directry: C:\Users\Ashok chandela\OneDrive\Desktop\test
+2026-06-07 21:38:09,624- WARNING- ---LIVE RUN MODE ENABLED: file system changes will be made
+2026-06-07 21:39:04,891- INFO- starting to organise directry: C:\Users\Ashok chandela\OneDrive\Desktop\test
+2026-06-07 21:39:04,892- WARNING- ---LIVE RUN MODE ENABLED: file system changes will be made
+2026-06-07 21:40:01,135- INFO- starting to organise directry: C:\Users\Ashok chandela\OneDrive\Desktop\test
+2026-06-07 21:40:01,136- WARNING- ---LIVE RUN MODE ENABLED: file system changes will be made
+2026-06-07 21:40:01,190- INFO- file name : 'film.mov' -> destination : 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Video'
+2026-06-07 21:40:01,194- INFO- file name : 'gift.gif' -> destination : 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Images'
+2026-06-07 21:40:01,197- INFO- file name : 'image.JPG' -> destination : 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Other'
+2026-06-07 21:40:01,200- INFO- file name : 'sound.wav' -> destination : 'C:\Users\Ashok chandela\OneDrive\Desktop\test\Audio'
