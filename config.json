@@ -1,0 +1,8 @@
+{
+  "Images": [".jpeg", ".jpg", ".gif", ".png", ".svg"],
+  "Documents": [".txt", ".docs", ".pdf", ".xlsx", ".pptx"],
+  "Audio": [".mp3", ".wav", ".aac"],
+  "Video": [".mp4", ".mov", ".avi", ".mkv"],
+  "Archives": [".zip", ".rar", ".tar", ".gz"],
+  "Other": []
+}
